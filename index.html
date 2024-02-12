@@ -36,17 +36,24 @@
 
     <hr>
 
-    <div style="background-color: blueviolet;">Document Object Model !</div>
-    <div style="background-color: rgb(0, 245, 255);">Change the Text using onclick fumction</div>
+    <div style="background-color: rgb(0, 245, 255);">Document Object Model !</div>
+    <div style="background-color: blueviolet;">Change the Text using onclick fumction</div>
     <h1 id="h1">Belive It</h1>
     <button onclick="convert()">Convert</button>
 
     <hr>
-    <div style="background-color: rgb(0, 245, 255);">Adding Two Numbers</div>
+
+    <div style="background-color: blueviolet;">Adding Two Numbers</div>
     number 1 : <input type="number" id="num1">
     number 2 : <input type="number" id="num2">
     <button onclick="add()">+</button>
     <p id="output">Oputput</p>
+
+    <hr>
+
+    <div style="background-color: blueviolet;">Generating Random Number</div>
+    <button onclick="generate_random_num()">click to get random number</button>
+    <input type="text", id="random_output">
 
 
 </body>
@@ -64,6 +71,13 @@
         let total = Number(num1.value) + Number(num2.value)
         let op = document.getElementById("output")
         op.textContent = op.textContent + " = " + total
+    }
+
+    function generate_random_num(){
+        let temp = Math.random()
+        // let num = String(temp*100).split(".")
+        let random_output = document.getElementById("random_output")
+        random_output.value = Math.floor(temp*100+1)
     }
     
 
