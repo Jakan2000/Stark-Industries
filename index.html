@@ -55,6 +55,15 @@
     <button onclick="generate_random_num()">click to get random number</button>
     <input type="text", id="random_output">
 
+    <hr>
+
+    <div style="background-color: blueviolet;">onkeyup Event Handler</div>
+    <input type="text", id="inputbox", onkeyup="copytoh1()">
+    <h1 id="result"></h1>
+
+    <hr>
+
+    
 
 </body>
 
@@ -78,6 +87,12 @@
         // let num = String(temp*100).split(".")
         let random_output = document.getElementById("random_output")
         random_output.value = Math.floor(temp*100+1)
+    }
+
+    function copytoh1(){
+        let input_text = document.getElementById("inputbox")
+        let h1 = document.getElementById("result")
+        h1.textContent = input_text.value
     }
     
 
