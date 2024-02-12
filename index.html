@@ -36,7 +36,7 @@
 
     <hr>
 
-    <div style="background-color: rgb(0, 245, 255);">Document Object Model !</div>
+    <div style="background-color: rgb(155, 255, 0);">Document Object Model !</div>
     <div style="background-color: blueviolet;">Change the Text using onclick fumction</div>
     <h1 id="h1">Belive It</h1>
     <button onclick="convert()">Convert</button>
@@ -71,6 +71,23 @@
 
     <div style="background-color: blueviolet;">Change Button Colour</div>
     <button id="change_colour_button" onclick="change_button_colour()">Change Colour</button>
+
+    <hr>
+
+    <div style="background-color: blueviolet;">Event Object</div>
+    <h1 id="selected_text">What to do !!!</h1>
+    <button onclick="getSelectedButtonValue(event)">Party</button>
+    <button onclick="getSelectedButtonValue(event)">Sleep</button>
+    <button onclick="getSelectedButtonValue(event)">Work</button>
+
+    <hr>
+
+    <div style="background-color: blueviolet;">innerHTML -> to manipulate inner(child) elements</div>
+    <div id="remove_tag">
+        <h1>Hello World</h1>
+    </div>
+    <button id="remove_tag_button" onclick="remove_tag()">remove</button>
+
 
 </body>
 
@@ -114,6 +131,17 @@
         btn.style.backgroundColor = "black"
         btn.style.color = "orange"
         btn.textContent = "colour changed"
+    }
+
+    function getSelectedButtonValue(event){
+        let h1 = document.getElementById("selected_text")
+        h1.textContent = event.target.textContent
+    }
+
+    function remove_tag(){
+        let div = document.getElementById("remove_tag")
+        div.innerHTML = "h1 tag removed and this string replaced"
+        
     }
 
 </script>
