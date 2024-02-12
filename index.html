@@ -63,7 +63,14 @@
 
     <hr>
 
-    
+    <div style="background-color: blueviolet;">Creating new element</div>
+    <button id="create_ele" onclick="create_element()">banana</button>
+    <div id="create_ele_div"></div>
+
+    <hr>
+
+    <div style="background-color: blueviolet;">Change Button Colour</div>
+    <button id="change_colour_button" onclick="change_button_colour()">Change Colour</button>
 
 </body>
 
@@ -94,7 +101,20 @@
         let h1 = document.getElementById("result")
         h1.textContent = input_text.value
     }
+
+    function create_element(){
+        let h1 = document.createElement("h1")
+        h1.textContent = "banana"
+        let div = document.getElementById("create_ele_div")
+        div.append(h1)
+    }
     
+    function change_button_colour(){
+        let btn = document.getElementById("change_colour_button")
+        btn.style.backgroundColor = "black"
+        btn.style.color = "orange"
+        btn.textContent = "colour changed"
+    }
 
 </script>
 
