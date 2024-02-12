@@ -1,0 +1,53 @@
+.black{
+    height: 100px;
+    width: 100px;
+    background-color: black;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.red{
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    margin-left: 5px;
+    display: inline-block;
+}
+
+.hii{
+    background-color: yellow;
+    display: inline-block;
+}
+
+.bye{
+    background-color: red;
+    display: inline-block;
+}
+
+.menu{
+    border: solid black 2px;
+    align-items: center;
+    padding: 5px;
+    display: inline-block;
+}
+
+.home{
+    display: inline-block;
+    background-color: black;
+    color: white;
+    padding: 2px;
+}
+
+.aboutus{
+    display: inline-block;
+    background-color: black;
+    color: white;
+    padding: 2px;
+}
+
+.contactus{
+    display: inline-block;
+    background-color: black;
+    color: white;
+    padding: 2px;
+}
