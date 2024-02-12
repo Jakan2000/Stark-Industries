@@ -35,9 +35,19 @@
     </div>
 
     <hr>
-    <div>Document Object Model !</div>
+
+    <div style="background-color: blueviolet;">Document Object Model !</div>
+    <div style="background-color: rgb(0, 245, 255);">Change the Text using onclick fumction</div>
     <h1 id="h1">Belive It</h1>
-    <button onclick=convert()>Convert</button>
+    <button onclick="convert()">Convert</button>
+
+    <hr>
+    <div style="background-color: rgb(0, 245, 255);">Adding Two Numbers</div>
+    number 1 : <input type="number" id="num1">
+    number 2 : <input type="number" id="num2">
+    <button onclick="add()">+</button>
+    <p id="output">Oputput</p>
+
 
 </body>
 
@@ -46,6 +56,14 @@
         // get element by id
         let h1 = document.getElementById("h1")
         h1.textContent = "Hasta La Vista"
+    }
+
+    function add(){
+        let num1 = document.getElementById("num1")
+        let num2 = document.getElementById("num2")
+        let total = Number(num1.value) + Number(num2.value)
+        let op = document.getElementById("output")
+        op.textContent = op.textContent + " = " + total
     }
     
 
