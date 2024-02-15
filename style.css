@@ -95,3 +95,17 @@
     background-color: red;
     color: white;
 }
+
+td{
+    text-align: center;
+    border: 1px dotted green;
+}
+
+tr{
+    border: 1px dotted green;
+}
+
+table{
+    border: 1px dotted green;
+}
+

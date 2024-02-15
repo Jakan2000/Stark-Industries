@@ -90,9 +90,64 @@
 
     <hr>
 
+    <div style="background-color: blueviolet;"> Delete tag using event object</div>
     <h1 onclick="deleteTag(event)" style="cursor: pointer;">One</h1>
     <h1 onclick="deleteTag(event)" style="cursor: pointer;">Two</h1>
     <h1 onclick="deleteTag(event)" style="cursor: pointer;">Three</h1>
+
+    <hr>
+
+    <div style="background-color: blueviolet;">To Do List</div>
+    <input type="text" id="todo_input">
+    <button id="add_list_button" onclick="add_list()">Add</button>
+    <ul id="list_container">ToDo's</ul>
+
+    <hr>
+
+    <div style="background-color: blueviolet;">Task 1</div>
+    <center style="color: blue;">Student Form</center>
+    <center>
+        <table>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" name="name" id="std_name"></td>
+            </tr>
+            <tr>
+                <td>Age</td>
+                <td><input type="text" name="age" id="std_age"></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td><input id="male_gender" type="radio" name="std_gender">Male <input id="female_gender" type="radio" name="std_gender">Female</td>
+            </tr>
+            <tr>
+                <td>Course</td>
+                <td>
+                    <select name="course" id="std_course">
+                        <option value="python">Python</option>
+                        <option value="java">Java</option>
+                        <option value="javascript">Java Script</option>
+                        <option value="sql">SQL</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>E-mail</td>
+                <td><input id="std_email" type="text"></td>
+            </tr>
+        </table>
+        <center><button id="save_button" onclick="get_student_data()">Save</button></center>
+    </center>
+
+    <center style="color: blue;">Student Details</center>
+    <center>
+        <table id="Student_details">
+            <tr>
+                <td>Name</td> <td>Age</td> <td>Course</td> <td>Gender</td> <td>Email</td> <td>Action</td>
+            </tr>
+        </table>
+    </center>
+    
 
 
 </body>
@@ -151,9 +206,51 @@
     }
 
     function deleteTag(event){
-        let id = event.target.attributes.id.value
-        let h1 = event.target.remove()
+        event.target.remove();
     }
+
+    function add_list(){
+        let input = document.getElementById("todo_input")
+        let ul = document.getElementById("list_container")
+        let li = document.createElement("li")
+        // li.textContent = input.value
+        // let delete_button = document.createElement("button")
+        // delete_button.setAttribute("onclick", "deleteParentTag(event)")
+        // delete_button.textContent = "Delete"
+        // li.appendChild(delete_button)
+        li.innerHTML = input.value + "<button onclick='deleteParentTag(event)'>Delete</button>"
+        ul.append(li)
+    }
+
+    function deleteParentTag(event){
+        event.target.parentElement.remove();
+    }
+
+    function get_student_data(){
+        let name = document.getElementById("std_name").value
+        let age = document.getElementById("std_age").value
+        let gender = document.getElementsByName("std_gender")
+        if(gender[0].checked == true)
+            gender = "Male"
+        else
+            gender = "Female"
+        let course = document.getElementById("std_course").value
+        let email = document.getElementById("std_email").value
+        console.log(name)
+        console.log(age)
+        console.log(gender)
+        console.log(course)
+        console.log(email)
+        let student_details = document.getElementById("Student_details")
+        let tr = document.createElement("tr")
+        tr.innerHTML = `<tr><td>${name}</td> <td>${age}</td> <td>${course}</td> <td>${gender}</td> <td>${email}</td> <td><button id="delete_student_data" onclick="delete_student_data_row(event)">Delete</button></td> </tr>`
+        student_details.append(tr)
+    }
+
+    function delete_student_data_row(event){
+        event.target.parentElement.parentElement.remove();
+    }
+
 
 </script>
 
