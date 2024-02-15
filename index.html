@@ -88,6 +88,12 @@
     </div>
     <button id="remove_tag_button" onclick="remove_tag()">remove</button>
 
+    <hr>
+
+    <h1 onclick="deleteTag(event)" style="cursor: pointer;">One</h1>
+    <h1 onclick="deleteTag(event)" style="cursor: pointer;">Two</h1>
+    <h1 onclick="deleteTag(event)" style="cursor: pointer;">Three</h1>
+
 
 </body>
 
@@ -142,6 +148,11 @@
         let div = document.getElementById("remove_tag")
         div.innerHTML = "h1 tag removed and this string replaced"
         
+    }
+
+    function deleteTag(event){
+        let id = event.target.attributes.id.value
+        let h1 = event.target.remove()
     }
 
 </script>
